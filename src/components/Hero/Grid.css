@@ -1,0 +1,147 @@
+:root {
+    --level-one: translateZ(3rem);
+    --level-two: translateZ(6rem);
+    --level-three: translateZ(9rem);
+  
+    --fw-normal: 400;
+    --fw-bold: 700;
+  
+    --clr: #b7c9e5;
+  }
+  
+  
+  
+  /* .topCards {
+    display: grid;
+    gap: 5rem;
+    justify-content: center;
+    padding: 1rem;
+   
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+    
+  } */
+  
+  .card {
+    perspective: 1000px;
+    
+  }
+  
+  .card__content {
+    text-align: center;
+    position: relative;
+    padding: 8em 2em;
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .card:hover .card__content {
+    transform: rotateY(0.5turn);
+  }
+  
+  .card__front,
+  .card__back {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3em 1.5em;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  
+  .card__front {
+    background-color: var(--clr);
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/308367/fair.jpg);
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: #333;
+  }
+  
+  .card__front::before {
+    content: '';
+    position: absolute;
+    --spacer: 1em;
+    top: var(--spacer);
+    bottom: var(--spacer);
+    left: var(--spacer);
+    right: var(--spacer);
+    border: 3px solid currentColor;
+    transform: var(--level-one);
+  }
+  
+  .card__title {
+    font-size: 2.5rem;
+    transform: var(--level-three);
+    text-transform: uppercase;
+  }
+  
+  .card__subtitle {
+    transform: var(--level-two);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-weight: var(--fw-bold);
+    opacity: 0.9;
+    margin-top: 0.5rem;
+  }
+  
+  .card__body {
+    transform: var(--level-two);
+    font-weight: var(--fw-normal);
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  .card__back {
+    transform: rotateY(0.5turn);
+    color: var(--clr);
+    background: #333;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .card__content {
+      padding: 7em 1.5em;
+    }
+  
+    .card__title {
+      font-size: 2rem;
+    }
+  
+    .card__subtitle {
+      font-size: 0.85rem;
+    }
+  
+    .card__body {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card__content {
+      padding: 5em 1em;
+    }
+  
+    .card__title {
+      font-size: 1.75rem;
+    }
+  
+    .card__subtitle {
+      font-size: 0.75rem;
+    }
+  
+    .card__body {
+      font-size: 0.8rem;
+    }
+  }
+  
