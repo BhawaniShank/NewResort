@@ -17,6 +17,7 @@ import BookingForm from "./components/Hero/BookingForm.jsx";
 
 import Grid from "./components/Hero/Grid.jsx";
 import TypingAnimation from "./components/Hero/TypingAnimation.jsx";
+import AboutGrid from "./components/Hero/AboutGrid.jsx";
 // import Hero from "./components/Hero/Hero"
 const Home = () => {
   return (
@@ -89,6 +90,8 @@ const Home = () => {
 {/* <Page2/> */}
 <h1 className="text-center text-5xl font-semibold py-4">Heading1</h1>
 <Grid/>
+
+<AboutGrid/>
 {/* <CuratedExperience/> */}
 {/* <LogoSlider/> */}
 {/* <Contact/> */}
