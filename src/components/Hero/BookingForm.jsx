@@ -17,7 +17,7 @@ const BookingForm = () => {
       
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="md:bg-[#866b51]/50 p-4 md:rounded-md grid grid-cols-3 sm:grid-cols-5 h-full md:h-min  gap-2 md:gap-4 max-w-4xl  lg:mt-0 w-full absolute inset-x-0 inset-y-[70%] md:inset-y-auto md:bottom-0   mx-auto"
+        className="md:bg-[#3b2d26]/50 p-4 md:rounded-md grid grid-cols-3 sm:grid-cols-5 h-full md:h-min  gap-2 md:gap-4 max-w-4xl  lg:mt-0 w-full absolute inset-x-0 inset-y-[70%] md:inset-y-auto md:bottom-0   mx-auto"
       >
         {/* Check In */}
         <div className="text-white hidden md:block">

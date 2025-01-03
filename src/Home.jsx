@@ -38,7 +38,7 @@ const Home = () => {
 
 <div className="relative w-[100%] max-w-[120em] mx-auto h-full z-0 ">
 {/* <Navbar /> */}
-<div className="relative h-[34em]">
+<div className="relative h-[40em]">
 <video
     className="w-full h-full md:h-full object-cover group "
     autoPlay
@@ -63,7 +63,7 @@ const Home = () => {
     transformOrigin: "top right", 
    
   }} 
-  className="fixed md:bottom-10 z-20 right-0 w-[100px] h-[100px]" 
+  className="fixed md:bottom-80 z-20 right-0 w-[100px] h-[100px]" 
   animate={{
     rotate: [0, -15, 10, 0],
   }}

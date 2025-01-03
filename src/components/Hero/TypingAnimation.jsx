@@ -50,17 +50,18 @@ const TypingAnimation = () => {
 
   return (
     <div className="absolute inset-0 bg-black bg-opacity-20 flex flex-col justify-center items-center text-center gap-5 text-white px-4">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">
+      <h1 className="text-2xl max-w-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4">
         {displayedText}
-      </h1>
-      {!isTyping && (
+        {!isTyping && (
         <button
           onClick={functions[currentLine]}
-          className="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all"
+          className=" px-6 py-2 m-3 text-3xl bg-[#3b2d26]/50 hover:bg-[#ca8a04] border-2 hover:border-0 border-white text-white rounded-lg transition-all"
         >
           Explore
         </button>
       )}
+      </h1>
+      
     </div>
   );
 };
