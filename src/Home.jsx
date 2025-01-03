@@ -1,8 +1,9 @@
 
 import { motion } from "framer-motion";
 
+import herosection from './assets/Hero/hero.mp4';
 
-import pricetag from './assets/Hero/pricetagg.png'
+import pricetag from './assets/Hero/pricetagg.png';
 // import Button from "./components/Button.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import BookingForm from "./components/Hero/BookingForm.jsx";
@@ -45,7 +46,7 @@ const Home = () => {
     muted
     playsInline
 >
-    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+    <source src={herosection} type="video/mp4" />
    
 </video>
 
@@ -86,6 +87,7 @@ const Home = () => {
 {/* <Hero/> */}
 
 {/* <Page2/> */}
+<h1 className="text-center text-5xl font-semibold py-4">Heading1</h1>
 <Grid/>
 {/* <CuratedExperience/> */}
 {/* <LogoSlider/> */}
