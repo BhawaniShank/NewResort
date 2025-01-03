@@ -62,7 +62,7 @@ const AboutGrid = () => {
     Built in  Rajasthali resort and Spa has always been an appropriate example of tasteful luxury for its guests. The hotel strives to curate the experience of traditional Rajasthan for its guests who come in through the grand entrance of the hotel. Complete with all modern amenities and services, we strive to recreate the royal atmosphere for our precious guests.
     In the lap of the scenic Aravallis Hills, we welcome you to Rajasthali Resort & Spa for a unique accommodation experience. With its 115 opulently designed guest rooms, including a presidential suite, 01 Aravali room, 03 Three bedroom Suite tent, 02 Two bedroom suite tent, 14 grand luxury tents with Jacuzzi, 15 royal luxury tents with Jacuzzi, 26 royal luxury tent with balcony, 1 two bedroom villa with private pool,  2 one bedroom villa with private pool, 2 one bedroom villa with Jacuzzi, 8 deluxe palace rooms and, 22 premium palace room,  Rajasthali Resort and Spa seeks to provide a comfortable and premium stay experience, irrespective of whether you are here for business or leisure. Additionally, thereafter a plethora of elaborate and unique facilities. The Rajasthali Resort team is dedicated to providing great comfort to our guests.  With the spirit of Indian hospitality and our commitment to providing it flawlessly to our customers, imbibed in our service culture and practices, we welcome you to a one-of-a-kind luxury experience at Rajasthali.
     </p>
-    <div className="grid grid-cols-2  mx-auto md:grid-cols-2 mt-20 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-2 max-w-6xl mx-auto md:grid-cols-2 mt-20 lg:grid-cols-3 gap-4">
   {rooms.map((room, index) => (
     <div
       key={index}

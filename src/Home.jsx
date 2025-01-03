@@ -10,7 +10,7 @@ import pricetag from './assets/Hero/pricetagg.png';
 import Navbar from "./components/Navbar/Navbar.jsx";
 import BookingForm from "./components/Hero/BookingForm.jsx";
 // import Footer from "./components/Hero/Footer.jsx";
-// import Page2  from "./components/Hero/Page2.jsx";
+import Page2  from "./components/Hero/Page2.jsx";
 // import CuratedExperience from "./components/Hero/CuratedExperience.jsx";
 // import LogoSlider from "./components/LogoSlider/LogoSlider.jsx";
 // import Contact from "./components/Contact/Contact.jsx"
@@ -89,13 +89,10 @@ const Home = () => {
 
 {/* <Hero/> */}
 
-{/* <Page2/> */}
-<div className=" text-white"
+<Page2/>
+<div className=" text-white bg-gradient-to-r from-[#f4c9a9] via-[#fedbbd] to-[#ffecdd] lg:px-20"
     style={{
-      backgroundImage: `url(${parallex})`,
-      backgroundAttachment: 'fixed',
-     
-      backgroundSize: 'cover',
+  
       height: '100%', // Adjust height as needed
     }}
     >
