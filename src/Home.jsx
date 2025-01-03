@@ -20,6 +20,8 @@ import Page2  from "./components/Hero/Page2.jsx";
 import Grid from "./components/Hero/Grid.jsx";
 import TypingAnimation from "./components/Hero/TypingAnimation.jsx";
 import AboutGrid from "./components/Hero/AboutGrid.jsx";
+import Page4 from "./components/Hero/Page4.jsx";
+import Page5 from "./components/Hero/Page5.jsx";
 // import Hero from "./components/Hero/Hero"
 const Home = () => {
   return (
@@ -101,6 +103,8 @@ const Home = () => {
 
 <AboutGrid/>
 </div>
+<Page4/>
+<Page5/>
 {/* <CuratedExperience/> */}
 {/* <LogoSlider/> */}
 {/* <Contact/> */}

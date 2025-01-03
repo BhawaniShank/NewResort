@@ -1,53 +1,96 @@
-import React from 'react';
-import desert from '../../assets/Hero/desert.png'
-import desert2 from '../../assets/Hero/desert2.jpeg'
+import React, { useState, useEffect } from 'react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+
+const images = [
+    "https://picsum.photos/800/400?random=1",
+    "https://picsum.photos/800/400?random=2",
+    "https://picsum.photos/800/400?random=3",
+];
+
 const Page2 = () => {
-  return (
-    <div className="bg-[#4CAF50] flex flex-col items-center justify-center min-h-[45em] p-4 relative">
-      <div className="text-center max-w-2xl z-10">
-        <h2 className="text-sm font-medium tracking-widest text-[#2c2c2c] mb-2">
-          DISCOVER THE WORLD OF
-        </h2>
-        <h1 className="text-4xl text-[#a0522d] font-bold mb-4">
-          The Tree House Resort
-        </h1>
-        <p className="text-[#2c2c2c] mb-4">
-          The Tree House Resort is an award-winning property that was built on the principles of Eco-luxury and unconventionality.
-        </p>
-        <p className="text-[#2c2c2c] mb-4">
-          Not only was breaking away from the stereotypical heritage fanfare and “Bed in a box” mentality of absolute necessity, but also a gateway to innovative yet responsible hospitality.
-        </p>
-        <p className="text-[#2c2c2c] mb-4">
-          Nestled in the scenic Syari Valley, with an amazing view of the mighty Aravallis,
-        </p>
-        <p className="text-[#2c2c2c] mb-4">
-          The Tree House Resort is situated at Nature Farms which is spread around 300 acres of pristine landscape. The resort derives its inspiration from the three elements of nature; Air, Water &amp; Earth.
-        </p>
-        <p className="text-[#2c2c2c] mb-4">
-          The décor is in sync with the theme of nature with tree top rooms and over-water suites essentially made of wood under the Eco-friendly standards of construction.
-        </p>
-        <p className="text-[#2c2c2c] mb-4">
-          The meandering pathways navigate through lush green vegetation, water bodies, &amp; waterfalls so as to ensure that the soothing sound of flowing/falling water does not leave the guests ears as they move around discovering the property. In addition, there are several wooden gazebos adorning the property where guests can indulge in meditation, reading and relaxing in the midst of un-spoilt nature.
-        </p>
-      </div>
-      <div className="flex justify-between w-full max-w-2xl mt-8">
-        <img
-          alt="Illustration of a tree house on the left"
-          className="xl:w-80 xl:h-80 h-40 w-40 hidden lg:block absolute bottom-0 left-0 "
-          height="100"
-          src={desert2}
-          width="100"
-        />
-        <img
-          alt="Illustration of tree branches on the right"
-          className="xl:w-80 xl:h-80 h-40 w-40 hidden lg:block absolute top-0 right-0 m"
-          height="100"
-          src={desert}
-          width="100"
-        />
-      </div>
-    </div>
-  );
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    const handlePrevClick = () => {
+        const prevIndex = (currentImageIndex - 1 + images.length) % images.length;
+        setCurrentImageIndex(prevIndex);
+    };
+
+    const handleNextClick = () => {
+        const nextIndex = (currentImageIndex + 1) % images.length;
+        setCurrentImageIndex(nextIndex);
+    };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 10000); // Change every 10 seconds
+
+        return () => clearInterval(interval); // Clean up interval on component unmount
+    }, []);
+
+    return (
+        <div className="flex flex-col lg:flex-row items-center justify-center min-h-full bg-white p-4">
+            <div className="lg:w-1/2 p-8 text-center lg:text-left">
+                <img
+                    src="https://placehold.co/100x100"
+                    alt="ITC Hotels Logo"
+                    className="mx-auto lg:mx-0 mb-4 w-24 h-24"
+                />
+                <h1 className="text-2xl lg:text-4xl font-bold mb-4">ITC HOTELS</h1>
+                <p className="text-sm lg:text-lg font-semibold mb-4">RESPONSIBLE LUXURY</p>
+                <p className="text-gray-700 mb-4">
+                    With ‘Namaste’ as the enduring symbol of its brand experience and ‘Responsible Luxury’ as the
+                    guiding premise, ITC Hotels are an archetype of the culture and ethos of each destination
+                    offering authentic, indigenous luxury experiences which are in harmony with the environment
+                    and society.
+                </p>
+                <p className="text-gray-700 mb-8">
+                    With a platinum grade commitment to our guests and the planet, 23 ITC Hotel properties are
+                    certified with a LEED (Leadership in Energy and Environmental Design) Platinum rating for
+                    globally recognised planet positive endeavours.
+                </p>
+                <button className="px-6 py-2 border border-black rounded-full text-black hover:bg-black hover:text-white transition duration-300">
+                    KNOW MORE
+                </button>
+            </div>
+
+            <div id="controls-carousel" className="lg:w-1/2 relative w-full" data-carousel="static">
+                {/* Carousel Wrapper */}
+                <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+                    {images.map((image, index) => (
+                        <div
+                            key={index}
+                            className={`absolute block w-full transition-opacity duration-700 ease-in-out top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+                        >
+                            <img src={image} alt={`Slide ${index + 1}`} className="w-full rounded-lg" />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Slider Controls */}
+                <button
+                    onClick={handlePrevClick}
+                    className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-prev
+                >
+                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4">
+                        <FaChevronLeft className="text-black" />
+                        <span className="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button
+                    onClick={handleNextClick}
+                    className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                    data-carousel-next
+                >
+                    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4">
+                        <FaChevronRight className="text-black" />
+                        <span className="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    );
 };
 
 export default Page2;
