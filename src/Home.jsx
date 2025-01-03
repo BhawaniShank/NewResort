@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 
 import herosection from './assets/Hero/hero.mp4';
 
+import parallex from './assets/Hero/parallex.jpg'
+
 import pricetag from './assets/Hero/pricetagg.png';
 // import Button from "./components/Button.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
@@ -88,10 +90,20 @@ const Home = () => {
 {/* <Hero/> */}
 
 {/* <Page2/> */}
-<h1 className="text-center text-5xl font-semibold py-4">Heading1</h1>
+<div className=" text-white"
+    style={{
+      backgroundImage: `url(${parallex})`,
+      backgroundAttachment: 'fixed',
+     
+      backgroundSize: 'cover',
+      height: '100%', // Adjust height as needed
+    }}
+    >
+<h1 className="text-center text-5xl font-semibold py-4 mix-blend-difference">Heading1</h1>
 <Grid/>
 
 <AboutGrid/>
+</div>
 {/* <CuratedExperience/> */}
 {/* <LogoSlider/> */}
 {/* <Contact/> */}
