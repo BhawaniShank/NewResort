@@ -1,5 +1,5 @@
 
-
+import parallex from '../../assets/Hero/parallex.jpg'
 const AboutGrid = () => {
   const rooms = [
     {
@@ -30,6 +30,15 @@ const AboutGrid = () => {
     },
   ];
   return (
+    <div className=""
+    style={{
+      backgroundImage: `url(${parallex})`,
+      backgroundAttachment: 'fixed',
+     
+      backgroundSize: 'cover',
+      height: '100%', // Adjust height as needed
+    }}
+    >
     <div className="p-6 max-w-4xl mx-auto mt-20 ">
     <div className="grid grid-cols-2 gap-4 md:grid-cols-2 pb-4 lg:grid-cols-5" id="aboutgrid">
       {/* Left Section */}
@@ -73,9 +82,9 @@ const AboutGrid = () => {
       <img
         src={room.image}
         alt={room.title}
-        className="w-full h-full object-cover transition-transform group-hover:scale-110"
+        className="w-full h-full object-cover transition-transform "
       />
-      <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div className="absolute inset-0  opacity-0 group-hover:opacity-100 transition-opacity"></div>
       <div className="absolute inset-x-0 bottom-1 md:bottom-10  flex flex-col justify-center items-center md:opacity-0 group-hover:opacity-100 transition-opacity">
         {/* <h2 className="text-white text-lg font-semibold">{room.title}</h2> */}
         {room.description && (
@@ -91,6 +100,7 @@ const AboutGrid = () => {
   ))}
 </div>
 
+    </div>
     </div>
   );
 };
