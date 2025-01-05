@@ -22,6 +22,12 @@ import TypingAnimation from "./components/Hero/TypingAnimation.jsx";
 import AboutGrid from "./components/Hero/AboutGrid.jsx";
 import Page4 from "./components/Hero/Page4.jsx";
 import Page5 from "./components/Hero/Page5.jsx";
+import Grid2 from "./components/Hero/Grid2.jsx";
+import Big3 from "./components/Hero/Big3.jsx";
+import Facility from "./components/Hero/Facility.jsx";
+import LuxuryGrid from "./components/Hero/LuxuryGrid.jsx";
+import About from "./components/Hero/About.jsx";
+import Testimonial from "./components/Hero/Testimonial.jsx";
 // import Hero from "./components/Hero/Hero"
 const Home = () => {
   return (
@@ -105,12 +111,18 @@ const Home = () => {
 </div>
 <Page4/>
 <Page5/>
+<Grid2/>
 {/* <CuratedExperience/> */}
 {/* <LogoSlider/> */}
 {/* <Contact/> */}
 {/* <Experience/> */}
 {/* <LuxurySuiteCard/> */}
 {/* <Footer/> */}
+<Big3/>
+<Facility/>
+<LuxuryGrid/>
+<About/>
+<Testimonial/>
 </div>
   );
 };
