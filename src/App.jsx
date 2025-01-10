@@ -3,8 +3,9 @@ import Home from './Home'
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-white">
         <Home/>
+
     </div>
   )
 }
